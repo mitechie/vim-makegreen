@@ -23,7 +23,16 @@ function s:RunMake() "{{{1
   if has('unix')
     set shellpipe=&> "quieter make output
   endif
-  silent! make %
+
+  " I use files in the same dir test_xxxx.*
+  " if we're already on the test_xxx.py file, just rerun current test file
+  if empty(matchstr(expand('%'), 'test_'))
+    " if no test_ on the filename, then add it to run tests
+    silent! make test_%
+  else
+    silent! make %
+  endif
+
   let &shellpipe = s:old_sp
 
   redraw!
