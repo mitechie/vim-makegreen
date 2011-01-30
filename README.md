@@ -4,6 +4,17 @@ vim-MakeGreen
 makegreen.vim is a vim (http://www.vim.org) plugin that runs make and shows the
 test run status with a red or green bar.
 
+Mitechie Fork
+-------------
+Check the original for the real deal. This is me tweaking how it runs the files
+based on my usage. I keep a matching test file for files I'm working on. So for
+file `email.py` I'll have `test_email.py`. So it prepends test_ to the
+filenames.
+
+I also often want to rerun the tests while I'm on the test file itself, so it
+will catch that I'm on a test file and just rerun it.
+
+
 Installation
 ------------
 
